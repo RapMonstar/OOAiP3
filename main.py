@@ -68,7 +68,7 @@ class PrepareChangeSong(ICommand):
         self.__executor.changeSong()
 
 
-class Gadgets:
+class Smartpult:
     def __init__(self):
         self.history: List[ICommand] = []
 
@@ -87,12 +87,12 @@ class Gadgets:
 if __name__ == '__main__':
     light = Light()
     musicCenter = MusicCenter()
-    gadget = Gadgets()
+    smartpult = Smartpult()
 
-    gadget.addCommand(PrepareOnLight(light))
-    gadget.addCommand(PrepareOnMusicCenter(musicCenter))
-    gadget.addCommand(PrepareChangeSong(musicCenter))
-    gadget.addCommand(PrepareOffMusicCenter(musicCenter))
-    gadget.addCommand(PrepareOffLight(light))
+    smartpult.addCommand(PrepareOnLight(light))
+    smartpult.addCommand(PrepareOnMusicCenter(musicCenter))
+    smartpult.addCommand(PrepareChangeSong(musicCenter))
+    smartpult.addCommand(PrepareOffMusicCenter(musicCenter))
+    smartpult.addCommand(PrepareOffLight(light))
 
-    gadget.work()
+    smartpult.work()
